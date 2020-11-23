@@ -10,7 +10,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - /.backend:/var/www/html
+      - ./backend:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
       - mysql
@@ -23,12 +24,27 @@ services:
     restart: unless-stopped
     tty: true
     ports: 
-      - 4306:3306
+      - "4306:3306"
     volumes: 
-      
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
     networks:
       - laravel
 
   php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php
+    volumes: 
+      - ./backend:/var/www/html
+    ports:
+      - "9000:9000"
     networks:
       - laravel
