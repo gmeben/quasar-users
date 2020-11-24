@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-* [https://www.docker.com/products/docker-desktop](Docker)
+* [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Setup
 
@@ -14,4 +14,4 @@
 
 ## Issues
 
-When performing migrations with [https://laravel.com/docs/migrations](Artisan) (ex: `php artisan migrate`), you may need to fix the MySQL credentials located at `/backend/.env`.
+When performing migrations with [Artisan](https://laravel.com/docs/migrations) (ex: `php artisan migrate`), you may need to fix the MySQL credentials located at `/backend/.env`.
