@@ -2,7 +2,8 @@
 
 ## Dependencies
 
-* [Docker](https://www.docker.com/products/docker-desktop)
+* [Docker](https://docs.docker.com/get-docker/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Backend Setup
 
