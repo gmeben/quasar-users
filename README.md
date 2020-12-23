@@ -4,13 +4,19 @@
 
 * [Docker](https://www.docker.com/products/docker-desktop)
 
-## Setup
+## Backend Setup
 
 1. Clone this repository
 2. In a terminal window, navigate to the cloned repository's location
 3. Run `docker-compose build`
 4. Run `docker-compose up -d`
-5. In a web browser, navigate to `localhost:8080`
+5. In a web browser, navigate to `http://localhost:8080`
+
+## Client Setup
+
+1. In this cloned repository, navigate to the client directory `cd client`
+2. Run `quasar dev`
+3. The default web browser should automatically load `http://localhost:8081/#/`
 
 ## Issues
 
