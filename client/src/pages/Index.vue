@@ -20,7 +20,7 @@ export default defineComponent({
   },
   methods: {
     loadData() {
-      axios
+      this.$axios
         .get('http://localhost:8080/api/hello')
         .then(res => {
           console.log('res', res)
