@@ -1,11 +1,7 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="column items-center justify-evenly">
+    <h1>Page Title</h1>
+    <p>Message: {{ message }}</p>
   </q-page>
 </template>
 
@@ -13,9 +9,31 @@
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/CompositionComponent.vue';
 import { defineComponent, ref } from '@vue/composition-api';
+import axios from 'axios';
 
 export default defineComponent({
   name: 'PageIndex',
+  data() {
+    return {
+      message: ''
+    }
+  },
+  methods: {
+    loadData() {
+      axios
+        .get('http://localhost:8080/api/hello')
+        .then(res => {
+          console.log('res', res)
+          this.message = res.data
+        })
+        .catch(error => {
+          console.log('error', error)
+        })
+      }
+  },
+  mounted() {
+    this.loadData()
+  },
   components: { ExampleComponent },
   setup() {
     const todos = ref<Todo[]>([
