@@ -12,11 +12,12 @@ const { configure } = require('quasar/wrappers');
 module.exports = configure(function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
-    supportTS: {
-      tsCheckerConfig: {
-        eslint: true
-      }
-    },
+    // supportTS: {
+    //   tsCheckerConfig: {
+    //     eslint: true
+    //   }
+    // },
+    supportTS: true,
 
     // https://quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
