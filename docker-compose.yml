@@ -28,10 +28,10 @@ services:
     volumes: 
       - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: quasar_users_db
+      MYSQL_USER: quasar_users_user
+      MYSQL_PASSWORD: quasar_users_password
+      MYSQL_ROOT_PASSWORD: quasar_users_password
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
