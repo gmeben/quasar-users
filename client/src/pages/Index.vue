@@ -2,7 +2,7 @@
   <q-page class="column items-center justify-evenly">
     <h1>Page Title</h1>
     <p>Message: {{ message }}</p>
-    <input v-on:click="getCsrfCookie()" type="button" value="Sign In"/>
+    <input v-on:click="login()" type="button" value="Login"/>
   </q-page>
 </template>
 
@@ -18,6 +18,14 @@ export default defineComponent({
     }
   },
   methods: {
+    login() {
+      axios.post('http://localhost:8080/login').then(response => {
+          console.log('login', response)
+      })
+      .catch(error => {
+        console.log('error', error)
+      })
+    },
     getCsrfCookie() {
       axios.get('http://localhost:8080/sanctum/csrf-cookie').then(response => {
         console.log('cookie', response)
@@ -35,6 +43,7 @@ export default defineComponent({
       }
   },
   mounted() {
+    this.getCsrfCookie()
     this.loadData()
   },
   setup() { }
