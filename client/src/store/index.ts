@@ -2,6 +2,7 @@ import { store } from 'quasar/wrappers';
 import Vuex from 'vuex';
 
 // import example from './module-example';
+import login from './login';
 // import { ExampleStateInterface } from './module-example/state';
 
 /*
@@ -21,6 +22,7 @@ export default store(function ({ Vue }) {
 
   const Store = new Vuex.Store<StateInterface>({
     modules: {
+      login
       // example
     },
 

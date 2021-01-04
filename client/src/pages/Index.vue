@@ -18,14 +18,6 @@ export default defineComponent({
     }
   },
   methods: {
-    login() {
-      axios.post('http://localhost:8080/login').then(response => {
-          console.log('login', response)
-      })
-      .catch(error => {
-        console.log('error', error)
-      })
-    },
     getCsrfCookie() {
       axios.get('http://localhost:8080/sanctum/csrf-cookie').then(response => {
         console.log('cookie', response)

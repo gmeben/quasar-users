@@ -61,12 +61,14 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
+
 export default {
   props: ["tab"],
   methods: {
-    ...mapActions("store", ["authenticateUser", "registerUser"]),
-    ...mapMutations("store", [
+    ...mapActions("login", ["authenticateUser", "registerUser"]),
+    ...mapMutations("login", [
       "setIsLoading",
+      "setLoginUsername",
       "setLoginName",
       "setLoginEmail",
       "setLoginPassword",
@@ -86,8 +88,9 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("store", [
+    ...mapGetters("login", [
       "isLoading",
+      "loginUsername",
       "loginName",
       "loginEmail",
       "loginPassword",

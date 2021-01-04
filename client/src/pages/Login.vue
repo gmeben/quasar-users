@@ -36,14 +36,26 @@
 <script>
 import { mapActions } from "vuex";
 import LoginRegister from "../components/LoginRegister.vue";
+import axios from 'axios';
+
 export default {
   data() {
     return {
       tab: "login"
     };
   },
+  methods: {
+    getCsrfCookie() {
+      axios.get('http://localhost:8080/sanctum/csrf-cookie').then(response => {
+        console.log('cookie', response)
+      });
+    },
+  },
   components: {
     LoginRegister
+  },
+  mounted() {
+    this.getCsrfCookie()
   }
 };
 </script>
