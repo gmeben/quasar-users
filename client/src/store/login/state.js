@@ -4,6 +4,7 @@ export default function () {
     isLoading: false,
     userDetails: {},
     users: {},
+    loginUsername: "",
     loginName: "",
     loginEmail: "",
     loginPassword: "",

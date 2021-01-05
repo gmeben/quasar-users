@@ -7,7 +7,7 @@ export function someMutation (state) {
 export function setIsLoading(state, payload) {
   state.isLoading = payload;
 }
-export function setUsername(state, payload) {
+export function setLoginUsername(state, payload) {
   state.loginUsername = payload;
 }
 export function setLoginName(state, payload) {
